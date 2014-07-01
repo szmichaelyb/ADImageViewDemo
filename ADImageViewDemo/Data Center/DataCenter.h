@@ -18,10 +18,21 @@ typedef MKNKErrorBlock ErrorBlock;
 
 + (DataCenter*)sharedCenter;
 
+<<<<<<< HEAD
 - (void)cacheData;
 - (void)cleanCache;
 - (void)managedObject:(id<HJMOUser>)aObject;
 
 - (void)getADPhotoList:(CompleteBlock)handleComplete onError:(ErrorBlock)handleError;
+=======
+- (NSUInteger)cacheSize;
+- (void)cacheData;
+- (void)cleanCache;
+
+- (void)managedObject:(id<HJMOUser>)aObject;
+
+- (NSArray*)getADPhotoList:(CompleteBlock)handleComplete onError:(ErrorBlock)handleError;
+- (NSString*)getCacheImagePath:(NSString*)url;
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 
 @end

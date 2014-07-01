@@ -143,8 +143,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
+<<<<<<< HEAD
             landmarkName = "@implementation ADImageViewController"
             landmarkType = "3">
+=======
+            landmarkName = "-setSubviews"
+            landmarkType = "5">
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -159,8 +164,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
+<<<<<<< HEAD
             landmarkName = "@implementation ADImageViewController"
             landmarkType = "3">
+=======
+            landmarkName = "-addImageToScroll"
+            landmarkType = "5">
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,8 +217,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
             endingLineNumber = "161"
+<<<<<<< HEAD
             landmarkName = "@implementation ADImageViewController"
             landmarkType = "3">
+=======
+            landmarkName = "-singleTapGestureRecognizer:"
+            landmarkType = "5">
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,8 +238,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
             endingLineNumber = "162"
+<<<<<<< HEAD
             landmarkName = "@implementation ADImageViewController"
             landmarkType = "3">
+=======
+            landmarkName = "-singleTapGestureRecognizer:"
+            landmarkType = "5">
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -14,10 +14,13 @@
 @synthesize imgView;
 @synthesize imageTitle;
 
+<<<<<<< HEAD
 /**
  *  @brief  カスタムイメージビューを生成する
  *
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)initSubviews
 {
     imgView = [[HJManagedImageV alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];

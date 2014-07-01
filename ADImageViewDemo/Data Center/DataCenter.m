@@ -26,16 +26,23 @@ static NSString *kPhotoPath = @"mobile/index.php?url=article/ad";
     NSMutableDictionary *_requestDic;
 }
 
+<<<<<<< HEAD
+=======
+- (void)cancelRequest:(NSString *)aKey;
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)photoRequestInfo:(NSString*)aPath onComplete:(CompleteBlock)handleComplete onError:(ErrorBlock)handleError;
 
 @end
 
 @implementation DataCenter
 
+<<<<<<< HEAD
 /**
  *  @brief  シングルトンインスタンスを生成する
  *
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 + (DataCenter *)sharedCenter
 {
     static dispatch_once_t once;
@@ -84,10 +91,13 @@ static NSString *kPhotoPath = @"mobile/index.php?url=article/ad";
     return self;
 }
 
+<<<<<<< HEAD
 /**
  *  @brief  ダウンロードしたJSONデータを保存する
  *
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)cacheData
 {
     NSString *serverDataFilePath = [[_netEngine cacheDirectoryName] stringByAppendingPathComponent: kServerDataFileName];
@@ -96,25 +106,45 @@ static NSString *kPhotoPath = @"mobile/index.php?url=article/ad";
 
 #pragma mark - Public methods
 
+<<<<<<< HEAD
 /**
  *  @brief  キャッシュしたJSONデータをクリアーする
  *
  */
+=======
+- (NSUInteger)cacheSize
+{
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *readyDirectory = [_netEngine cacheDirectoryName];
+    NSString *loadingDirectory = [readyDirectory stringByReplacingOccurrencesOfString: MKNETWORKCACHE_DEFAULT_DIRECTORY withString: @"loading"];
+    unsigned long long readySize = [[fm attributesOfItemAtPath: readyDirectory error: nil] fileSize];
+    unsigned long long loadingSize = [[fm attributesOfItemAtPath: loadingDirectory error: nil] fileSize];
+    
+    NSUInteger result = (NSUInteger)(readySize + loadingSize) - 136; // 此处假设两个文件夹中没有二级目录，则，两个文件夹所占大小为136；
+    
+    return result;
+}
+
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)cleanCache
 {
     [_objManager cancelLoadingObjects];
     [_objManager.fileCache emptyCache];
 }
 
+<<<<<<< HEAD
 /**
  *  @brief  メモリ内、ファイル内キャッシュ、またはそのURLからロードされたオブジェクトを管理する、。
  *
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)managedObject:(id<HJMOUser>)aObject
 {
     [_objManager performSelectorOnMainThread: @selector(manage:) withObject: aObject waitUntilDone: YES];
 }
 
+<<<<<<< HEAD
 /**
  *  @brief  サーバーから取得したイメージのJSONを解析する
  *
@@ -122,10 +152,14 @@ static NSString *kPhotoPath = @"mobile/index.php?url=article/ad";
  *  @param  handleError   失敗するブロック
  */
 - (void)getADPhotoList:(CompleteBlock)handleComplete onError:(ErrorBlock)handleError
+=======
+- (NSArray*)getADPhotoList:(CompleteBlock)handleComplete onError:(ErrorBlock)handleError
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 {
     NSString *path = kPhotoPath;
     
     [self photoRequestInfo:path onComplete: handleComplete onError: handleError];
+<<<<<<< HEAD
 }
 
 #pragma mark - Private methods
@@ -135,6 +169,40 @@ static NSString *kPhotoPath = @"mobile/index.php?url=article/ad";
  *  @param  handleComplete   成功するブロック
  *  @param  handleError   失敗するブロック
  */
+=======
+
+    return nil;
+}
+
+
+- (NSString*)getCacheImagePath:(NSString*)url
+{
+    NSString *result = [_objManager.fileCache readyFilePathForOid: url];
+    if ([[NSFileManager defaultManager] fileExistsAtPath: result])
+    {
+        return result;
+    }
+    else
+    {
+        return nil;
+    }
+}
+
+#pragma mark - Private methods
+- (void)cancelRequest:(NSString *)aKey
+{
+    NSArray *array = [_requestDic objectForKey: aKey];
+    if (array)
+    {
+        if (array.count != 0)
+        {
+            [array makeObjectsPerformSelector: @selector(cancel)];
+        }
+        [_requestDic removeObjectForKey: aKey];
+    }
+}
+
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)photoRequestInfo:(NSString*)path onComplete:(CompleteBlock)handleComplete onError:(ErrorBlock)handleError
 {
     MKNetworkOperation *op= [_netEngine operationWithPath: path];

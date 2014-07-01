@@ -27,10 +27,13 @@
     [self initTestWithoutJSON];
 }
 
+<<<<<<< HEAD
 /**
  *  @brief  イメージのJSON情報を取得できないためのテスト
  *
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)initTestWithoutJSON{
     NSDictionary *dict1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Title1",KINFOCELLTITLE,@"http://www.sogou.com/images/logo/new/sogou.png",KINFOCELLIMG, nil];
     NSDictionary *dict2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Title2",KINFOCELLTITLE,@"http://weixin.sogou.com/images/chuizhi_index/new-wx-logo.v.1.gif",KINFOCELLIMG, nil];
@@ -39,10 +42,14 @@
     [self resetADImageArray:array];
 }
 
+<<<<<<< HEAD
 /**
  *  @brief  イメージのJSON情報を設定し、更新する
  *
  */
+=======
+//加载焦点轮显图片
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)resetADImageArray: (NSArray *)array
 {
     [adImgArray removeAllObjects];
@@ -55,10 +62,13 @@
     }
 }
 
+<<<<<<< HEAD
 /**
  *  @brief  イメージのJSON情報を取得し、更新する
  *
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)refreshADImgInfoWithType
 {
    [[DataCenter sharedCenter] getADPhotoList:^(NSArray *focusImgs){
@@ -72,11 +82,14 @@
 
 #pragma mark -
 #pragma mark ADImageView Delegate
+<<<<<<< HEAD
 /**
  *  @brief  イメージのタップされたらの動作
  *
  *  @param  item  クリックされたイメージビュー
  */
+=======
+>>>>>>> 4e01ed72dea717fd1e072871fbb53d12a9739239
 - (void)ADImageDidSelectItem:(ADImageView *)item
 {
     //
